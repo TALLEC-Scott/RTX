@@ -10,7 +10,7 @@ class Vector3
         Vector3 operator+(const Vector3& v) const;
         Vector3 operator^(const Vector3& v) const;
         float operator*(const Vector3& v) const;
-        std::ostream& Vector3::operator<<(std::ostream &out);
+        std::ostream& operator<<(std::ostream &out);
 
 
     private:

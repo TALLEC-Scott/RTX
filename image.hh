@@ -1,3 +1,4 @@
+#pragma once
 #include "color.hh"
 #include <vector>
 #include <string>

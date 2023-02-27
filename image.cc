@@ -1,7 +1,7 @@
 #include "image.hh"
 
 Image::Image(unsigned int height, unsigned int width, std::vector<Color> pixels):
-_height(height), _width(width), _pixels(pixels) {};
+_height(height), _width(width), _pixels(pixels) {}
 
 void Image::createImage(std::string path)
 {
@@ -16,7 +16,7 @@ void Image::createImage(std::string path)
     }
 }
 
-int main(int argc, char const *argv[])
+/*int main(int argc, char const *argv[])
 {
     std::vector<Color> pixels = {Color('f', 'f', 'f'), Color('f', 'f', 'f'), Color('f', 'f', 'f'), Color('f', 'f', 'f'),
     Color(255, 0, 0),Color('f', 'f', 'f'),Color('f', 'f', 'f'),Color('f', 'f', 'f'),
@@ -25,4 +25,4 @@ int main(int argc, char const *argv[])
     Image image = Image(4, 4, pixels);
     image.createImage("test22");
     return 0;
-}
+}*/
