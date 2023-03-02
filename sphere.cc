@@ -28,7 +28,7 @@ Point3 Sphere::intersect(const Ray &ray) const {
 }
 
 Vector3  Sphere::getNormal(const Point3 &point) const {
-    return Vector3(point.getX() - _center.getX(), point.getY() - _center.getY(), point.getZ() - _center.getZ()) * (1/_radius);
+    return (point - _center).normalized();
 }
 
 void Sphere::getTexture(const Point3 &point, Color &kd, Color &ks, float &shininess) const {

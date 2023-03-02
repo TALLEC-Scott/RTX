@@ -27,4 +27,4 @@ add_executable(rtx
         Point_Light.hh
         camera.hh
         Engine.hh
-        Engine.cc vector.cc Scene.hh Scene.cc)
+        Engine.cc vector.cc Scene.hh Scene.cc camera.cc Matrix3d.cc Matrix3d.hh)

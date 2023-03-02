@@ -5,27 +5,29 @@
 class Vector3
 {
     public:
-        Vector3(float x, float y, float z);
+        Vector3(double x, double y, double z);
         Vector3();
-        Vector3 operator*(const float& l) const;
+        Vector3 operator*(const double& l) const;
         Vector3 operator-(const Vector3& v) const;
         Vector3 operator+(const Vector3& v) const;
         Vector3 operator^(const Vector3& v) const;
+        double operator[](int i) const;
         float operator*(const Vector3& v) const;
         std::ostream& operator<<(std::ostream &out);
 
+    Vector3 normalized() const;
 
     double norm2() const;
 
-    float getX() const;
+    double getX() const;
 
-    float getY() const;
+    double getY() const;
 
-    float getZ() const;
+    double getZ() const;
 
 private:
-        float _x;
-        float _y;
-        float _z;
+        double _x;
+        double _y;
+        double _z;
 
 };

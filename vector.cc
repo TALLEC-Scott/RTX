@@ -1,6 +1,6 @@
 #include "vector.hh"
 
-Vector3 Vector3::operator*(const float &l) const
+Vector3 Vector3::operator*(const double &l) const
 {
 
     return Vector3{_x * l, _y *l, _z*l};
@@ -36,7 +36,7 @@ std::ostream& Vector3::operator<<(std::ostream &out)
     return out << "{ " << _x <<  ", " <<  _y << ", " << _z << " }";
 }
 
-Vector3::Vector3(float x, float y, float z) {
+Vector3::Vector3(double x, double y, double z) {
     _x = x;
     _y = y;
     _z = z;
@@ -50,18 +50,35 @@ Vector3::Vector3() {
     _z = 0;
 }
 
+Vector3 Vector3::normalized() const {
+    double norm = norm2();
+    return Vector3(_x/norm, _y/norm, _z/norm);
+}
+
 double Vector3::norm2() const {
     return sqrt(_x*_x + _y*_y + _z*_z);
 }
 
-float Vector3::getX() const {
+double Vector3::getX() const {
     return _x;
 }
 
-float Vector3::getY() const {
+double Vector3::getY() const {
     return _y;
 }
 
-float Vector3::getZ() const {
+double Vector3::getZ() const {
     return _z;
+}
+
+double Vector3::operator[](int i) const {
+    if (i == 0) {
+        return _x;
+    } else if (i == 1) {
+        return _y;
+    } else if (i == 2) {
+        return _z;
+    } else {
+        return 0;
+    }
 }
