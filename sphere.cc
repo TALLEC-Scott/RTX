@@ -3,7 +3,7 @@
 #include "point.hh"
 
 
-Sphere::Sphere(Point3& center, double& radius, TextureMaterial& textureMaterial) :
+Sphere::Sphere(Point3& center, double radius, TextureMaterial& textureMaterial) :
 _center(center), _radius(radius), _textureMaterial(textureMaterial) {}
 
 Point3 Sphere::intersect(const Ray &ray) const {

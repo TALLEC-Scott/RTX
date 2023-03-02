@@ -3,12 +3,13 @@
 //
 #pragma once
 #include "point.hh"
+#include "light.hh"
 
 
-class Point_Light {
+class Point_Light : public Light{
     public:
     Point_Light();
-    Point_Light(Point3 position);
+    explicit Point_Light(Point3 position);
 
 private:
     Point3 _position;

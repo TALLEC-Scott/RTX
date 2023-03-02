@@ -7,9 +7,7 @@
 class Sphere : public Object
 {
     public:
-        Sphere(Point3& center, double& radius, TextureMaterial& textureMaterial);
-
-    Sphere(Point3 &center, double &radius, UniformTexture &textureMaterial);
+        Sphere(Point3& center, double radius, TextureMaterial& textureMaterial);
 
     Point3 intersect(const Ray &ray) const override;
         Vector3 getNormal(const Point3& point) const override;
