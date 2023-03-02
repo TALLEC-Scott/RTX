@@ -1,10 +1,12 @@
 #pragma once
 #include <iostream>
+#include <cmath>
 
 class Vector3
 {
     public:
         Vector3(float x, float y, float z);
+        Vector3();
         Vector3 operator*(const float& l) const;
         Vector3 operator-(const Vector3& v) const;
         Vector3 operator+(const Vector3& v) const;
@@ -13,11 +15,19 @@ class Vector3
         std::ostream& operator<<(std::ostream &out);
 
 
-    private:
+    double norm2() const;
+
+    float getX() const;
+
+    float getY() const;
+
+    float getZ() const;
+
+private:
         float _x;
         float _y;
         float _z;
-    
+
 };
 Vector3 Vector3::operator*(const float &l) const
 {
@@ -52,6 +62,35 @@ float Vector3::operator*(const Vector3& v) const
 
 std::ostream& Vector3::operator<<(std::ostream &out)
 {
-    out << "{ " << _x <<  ", " <<  _y << ", " << _z << " }";
+    return out << "{ " << _x <<  ", " <<  _y << ", " << _z << " }";
+}
 
+Vector3::Vector3(float x, float y, float z) {
+    _x = x;
+    _y = y;
+    _z = z;
+}
+
+/* default constructor */
+
+Vector3::Vector3() {
+    _x = 0;
+    _y = 0;
+    _z = 0;
+}
+
+double Vector3::norm2() const {
+    return sqrt(_x*_x + _y*_y + _z*_z);
+}
+
+float Vector3::getX() const {
+    return _x;
+}
+
+float Vector3::getY() const {
+    return _y;
+}
+
+float Vector3::getZ() const {
+    return _z;
 }
