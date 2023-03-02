@@ -17,4 +17,14 @@ add_executable(rtx
         point.hh
         sphere.cc
         sphere.hh
-        vector.hh ray.hh ray.cc uniform_texture.hh light.cpp light.hh Point_Light.cc Point_Light.hh camera.hh Engine.hh Engine.cc)
+        vector.hh
+        ray.hh
+        ray.cc
+        uniform_texture.hh
+        light.cc
+        light.hh
+        Point_Light.cc
+        Point_Light.hh
+        camera.hh
+        Engine.hh
+        Engine.cc vector.cc)

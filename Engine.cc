@@ -8,3 +8,7 @@ Engine::Engine(vector<Object *> objects, vector<Light *> lights, Camera camera) 
     _lights = std::move(lights);
     _camera = camera;
 }
+
+int main() {
+    return 0;
+}

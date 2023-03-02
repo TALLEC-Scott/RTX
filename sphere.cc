@@ -6,7 +6,7 @@
 Sphere::Sphere(Point3& center, double& radius, TextureMaterial& textureMaterial) :
 _center(center), _radius(radius), _textureMaterial(textureMaterial) {}
 
-Point3 Sphere::intersect(const Ray &ray, const float &t) const {
+Point3 Sphere::intersect(const Ray &ray) const {
     // here we need to solve the quadratic equation between the sphere and the line
     auto a = 1;
     auto b = Ray::getDirection()*2 *(Ray::getOrigin() - _center);
@@ -18,7 +18,7 @@ Point3 Sphere::intersect(const Ray &ray, const float &t) const {
     else {
         auto t1 = (-b - sqrt(delta)) / (2*a);
         auto t2 = (-b + sqrt(delta)) / (2*a);
-        if (t1 < 0 && t2 < 0 || t1< 0 || t2< 0) {
+        if ((t1 < 0 && t2 < 0) || t1< 0 || t2< 0) {
             return Point3(0, 0, 0);
         }
         else {
@@ -27,7 +27,7 @@ Point3 Sphere::intersect(const Ray &ray, const float &t) const {
     }
 }
 
-const Vector3 Sphere::getNormal(const Point3 &point) const {
+Vector3  Sphere::getNormal(const Point3 &point) const {
     return Vector3(point.getX() - _center.getX(), point.getY() - _center.getY(), point.getZ() - _center.getZ()) * (1/_radius);
 }
 

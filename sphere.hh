@@ -11,8 +11,8 @@ class Sphere : public Object
 
     Sphere(Point3 &center, double &radius, UniformTexture &textureMaterial);
 
-    Point3 intersect(const Ray &ray, const float& t) const override;
-        const Vector3 getNormal(const Point3& point) const override;
+    Point3 intersect(const Ray &ray) const override;
+        Vector3 getNormal(const Point3& point) const override;
         void getTexture(const Point3& point, Color& kd, Color& ks, float& shininess) const override;
         const TextureMaterial& getMaterial() const override;
     private:

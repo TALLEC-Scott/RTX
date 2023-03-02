@@ -11,8 +11,7 @@ public:
     Engine(vector<Object*> objects, vector<Light*> lights, Camera camera);
     Engine();
     ~Engine();
-    Engine
-    void run();
+    void render();
 
     private:
     vector<Object*> _objects;
